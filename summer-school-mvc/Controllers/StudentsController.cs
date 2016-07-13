@@ -35,6 +35,25 @@ namespace summer_school_mvc.Controllers
             return View(student);
         }
 
+        public void Enrollment()
+        {
+            int? id = null;
+            decimal cost = 200;
+            Student student = db.Students.Find(id);
+            if (student.LastName.ToLower() == "potter")
+            {
+                student.EnrollmentFee = cost / 2;
+
+            }
+            else if (student.FirstName.ToLower()[0] == student.LastName.ToLower()[0])
+            {
+                student.EnrollmentFee = cost * .9m;
+
+            }
+            else
+            {
+                student.EnrollmentFee = cost;
+            }
         // GET: Students/Create
         public ActionResult Create()
         {
