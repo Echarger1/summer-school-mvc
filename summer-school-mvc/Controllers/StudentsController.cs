@@ -54,6 +54,7 @@ namespace summer_school_mvc.Controllers
             {
                 student.EnrollmentFee = cost;
             }
+        }
         // GET: Students/Create
         public ActionResult Create()
         {
